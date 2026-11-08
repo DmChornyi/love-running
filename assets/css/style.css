@@ -3,8 +3,8 @@
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -55,7 +55,7 @@ header a {
   list-style-type: none;
 }
 
-#menu li {
+#menu > li {
   margin-bottom: 1em;
 }
 
@@ -88,10 +88,11 @@ nav {
   font-size: 2rem;
 }
 
-/* Main content*/
+/* Main content */
 main {
-  /* Make main element take up any surplus space to push footer down */
+  /* Enlarge main element to push footer down*/
   flex: 1 0 auto;
+  /* Add margin at the top to prevent content from being covered by the header */
   margin-top: 47px;
   /* Enable flex properties for child elements */
   display: flex;
@@ -107,7 +108,7 @@ main {
 }
 
 #cover-text {
-  /* Final rgba value sets the opacity so it is semi-transperent */
+  /* Final rgba value sets the opacity so it is semi-transparent */
   background-color: rgba(241, 109, 107, 0.7);
   font-size: 130%;
   position: absolute;
@@ -123,7 +124,7 @@ main {
   color: #ffffff;
 }
 
-/* Reasons Section */
+/* Reasons section */
 #reasons {
   width: 90%;
   margin: 20px auto;
@@ -145,17 +146,17 @@ main {
   padding: 0 20px;
 }
 
-hr {
+#benefits hr {
   border-top: 1px solid #3a3a3a;
   margin: 5px 0;
 }
 
 #circle-cover-bg {
-  background: url("../images/reasons-image.webp") no-repeat top center/cover;
-  width: 90vw;
+  background: url("../images/reasons-image.webp") no-repeat top center / cover;
   height: 90vw;
+  width: 90vw;
   margin-bottom: 20px;
-  /* Make the square image into a circle */
+  /* Makes the square image into a circle */
   border-radius: 50%;
   max-width: 300px;
   max-height: 300px;
@@ -167,9 +168,9 @@ hr {
   justify-content: center;
 }
 
-/* Meetup Times Section */
+/* Meetup Times section */
 #times {
-  background: url(../images/dublin-city.webp) no-repeat center/cover;
+  background: url("../images/dublin-city.webp") no-repeat center/cover;
   /* Handles responsivity without the need for a media query */
   display: flex;
   flex-wrap: wrap;
@@ -180,10 +181,11 @@ hr {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 15px;
   text-align: center;
-  /* This will not wrap on screens of less than 400px wide. Each div will expand to fill the available space on its row */
+  /* This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row */
   flex-basis: 200px;
   flex-grow: 1;
-  /* Creates a grid of meetup time divs over the background image */
+  /* Creates a grid of meetup time dives over the background image */
   border: 2px solid white;
 }
 
@@ -202,12 +204,13 @@ hr {
   line-height: 0;
 }
 
+/* Form */
 #signup {
-  background: url(../images/signup-image.webp) no-repeat center/cover;
-  background-position: 75%;
+  background-image: url("../images/signup-image.webp");
   background-size: cover;
-  flex-grow: 1;
+  background-position: 75%;
   padding: 20px 10% 0 10%;
+  flex-grow: 1;
 }
 
 #signup-form {
@@ -222,28 +225,29 @@ hr {
 }
 
 .text-input {
-  margin: 5px 0 20px 0;
-  padding: 0 5px;
-  height: 25px;
-  background-color: transparent;
+  background: transparent;
   color: #fafafa;
+  width: 100%;
+  height: 25px;
+  margin: 5px 0 20px 0;
   border: 1px solid #fafafa;
   border-radius: 2px;
+  padding: 0 5px;
 }
 
 .radio-buttons {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
 .join-button {
   margin-top: 20px;
   border-radius: 2px;
-  background-color: #454b1b;
-  color: #fafafa;
   padding: 15px 32px;
   font-size: 100%;
+  background-color: #454b1b;
+  color: #fafafa;
 }
 
 /* Footer */
@@ -368,7 +372,6 @@ hr {
   }
 }
 
-/* Large screens (monitors and desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
   /* Reasons section */
   #benefits {
