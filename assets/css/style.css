@@ -93,6 +93,9 @@ main {
   /* Make main element take up any surplus space to push footer down */
   flex: 1 0 auto;
   margin-top: 47px;
+  /* Enable flex properties for child elements */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hero section */
@@ -167,17 +170,17 @@ hr {
 /* Meetup Times Section */
 #times {
   background: url(../images/dublin-city.webp) no-repeat center/cover;
-  /* Handels responsivity without the need of a media queries */
+  /* Handles responsivity without the need for a media query */
   display: flex;
   flex-wrap: wrap;
 }
 
 #times div {
-  color: #ffffff;
+  color: #fafafa;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 15px;
   text-align: center;
-  /* This will not wrap on screens of less then 400px wide. Each div will expand to fill the available space on its row */
+  /* This will not wrap on screens of less than 400px wide. Each div will expand to fill the available space on its row */
   flex-basis: 200px;
   flex-grow: 1;
   /* Creates a grid of meetup time divs over the background image */
@@ -185,8 +188,8 @@ hr {
 }
 
 #times h3 {
-  /* Override the heading color set in the general styles */
-  color: #ffffff;
+  /* Override the heading colour set in general styles */
+  color: #fafafa;
 }
 
 /* Gallery page */
@@ -199,12 +202,6 @@ hr {
   line-height: 0;
 }
 
-/* Signup page */
-main {
-  display: flex;
-  flex-direction: column;
-}
-
 #signup {
   background: url(../images/signup-image.webp) no-repeat center/cover;
   background-position: 75%;
@@ -213,14 +210,15 @@ main {
   padding: 20px 10% 0 10%;
 }
 
-h2 {
-  color: #fafafa;
-}
-
 #signup-form {
   color: #ffffff;
   background-color: rgba(60, 60, 60, 0.6);
   padding: 30px;
+}
+
+#signup-form > h2 {
+  color: #fafafa;
+  margin-bottom: 20px;
 }
 
 .text-input {
@@ -333,6 +331,28 @@ h2 {
   /* Gallery */
   #photos {
     column-count: 3;
+  }
+
+  /* Form */
+  #signup {
+    background-position: center;
+    position: relative;
+  }
+
+  #signup-form {
+    max-width: 400px;
+    position: absolute;
+    left: 10%;
+    top: 150px;
+  }
+
+  .text-input:hover {
+    border-color: #f16c6b;
+  }
+
+  .join-button:hover {
+    background-color: #fafafa;
+    color: #454b1b;
   }
 }
 
